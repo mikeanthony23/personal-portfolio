@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  max-width: $bodyWrapper;
+  font-family: $bodyFont;
+  font-size: $bodyFontSize;
+  line-height: $bodyLineHeight;
+  margin-inline: auto;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $hdrFont;
+  font-weight: $headerFontWeight;
+}
+
+.wrapper {
+  max-width: $contentWrapper;
+  margin: auto;
+  position: relative;
+}
