@@ -4,11 +4,6 @@
   "description": "",
   "main": "index.js",
   "author": "",
-  "browserslist": [
-    "last 2 version",
-    "> .25%",
-    "IE 8"
-  ],
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",

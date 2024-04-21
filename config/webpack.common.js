@@ -38,7 +38,7 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      favicon: `${paths.public}/favicon.png`,
+      favicon: `${paths.public}/images/favicon.png`,
       template: `${paths.src}/template.html`, // template file
       filename: 'index.html', // output file
     }),
@@ -67,8 +67,9 @@ module.exports = {
     alias: {
       '@src': paths.src,
       '@scss': `${paths.src}/scss`,
-      '@fonts': `${paths.src}/fonts`,
-      '@images': `${paths.src}/images`,
+      '@public': paths.public,
+      '@fonts': `${paths.public}/fonts`,
+      '@images': `${paths.public}/images`,
     },
   },
 }

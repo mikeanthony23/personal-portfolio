@@ -1,0 +1,108 @@
+@use '../abstracts/abstractsIndex' as *;
+
+body::after {
+  // content: url('@images/screenshot.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.projects {
+  background: linear-gradient(102.89deg, #0c0d1b 0%, #1c1e38 80.66%);
+  text-align: center;
+  color: #fff;
+  &__wrapper {
+  }
+  &__container {
+    min-height: 910px;
+  }
+  &-header {
+    padding-top: 110px;
+  }
+
+  &__slider_area {
+    position: relative;
+  }
+}
+
+.slider {
+  margin: 50px auto 0;
+  overflow: hidden;
+  width: 620px;
+  height: 388px;
+  &::after {
+    content: url(@images/projects/desktop-project-frame.png);
+    position: absolute;
+    top: -8px;
+    left: 49.9%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s ease;
+    padding: 30px 0;
+  }
+  &__slide {
+    flex: 0 0 100%;
+  }
+  &__figure {
+  }
+  &__img {
+  }
+  &__navigation {
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__navigator {
+    transition: all 300ms linear;
+    pointer-events: auto;
+    width: 69px;
+    height: 69px;
+    border-radius: 100vw;
+    background: url(@images/projects/arrow.png) no-repeat center, $accentColor;
+    &:hover {
+      background-color: #37394d;
+    }
+    &--prev {
+    }
+    &--next {
+      transform: scale(-1);
+    }
+  }
+  &__visit-btn {
+    margin: 150px auto 0;
+    padding-block: 10px;
+  }
+  &__slider2_wrapper {
+    width: 150px;
+    height: 315px;
+    position: absolute;
+    bottom: -110px;
+    right: 270px;
+    &::after {
+      content: url(@images/projects/mobile-project-frame.png);
+      top: 0;
+    }
+  }
+  &--2 {
+    width: 129px;
+    height: 315px;
+    position: absolute;
+    top: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+    &::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use '../abstracts/abstractsIndex' as *;
+
+.about {
+  background: linear-gradient(259.93deg, #070712 0%, #1e213d 100%);
+  color: #fff;
+  &__wrapper {
+    max-width: 1530px;
+  }
+  &__container {
+    min-height: 809px;
+    padding: 180px 0;
+  }
+}
+
+.about-header {
+  text-align: center;
+  &__title1 {
+    &--accent-color {
+    }
+  }
+
+  &__paragraph {
+    margin-top: 51px;
+  }
+
+  &__title2 {
+    margin-top: 99px;
+    font-size: 3.5rem;
+    &--accent-color {
+    }
+    &--sub-hdr {
+      margin-top: 10px;
+    }
+  }
+}
+
+.technology-lists {
+  margin-top: 37px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  &__item {
+  }
+  &__figure {
+  }
+  &__image {
+    border-radius: 20px;
+  }
+}

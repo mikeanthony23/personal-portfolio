@@ -1,0 +1,52 @@
+@use '../abstracts/abstractsIndex' as *;
+
+.banner {
+  background: radial-gradient(100% 900% at 0% 2.89%, #212441 0%, #0f112c 59.5%);
+  &__wrapper {
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+  }
+
+  &__information {
+    min-height: 440px;
+    padding: 105px 20px;
+    width: 100%;
+  }
+}
+
+.banner-information {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 135px 0;
+  &__title {
+    font-weight: 400;
+    font-size: $headerFontSize;
+    &--sub-hdr {
+      font-weight: 400;
+    }
+    &--accent-color {
+      font-weight: $headerFontWeight;
+    }
+  }
+
+  &__text {
+    max-width: 600px;
+    margin: 32px auto 0;
+  }
+  &__link {
+    display: block;
+    width: 22px;
+    height: 42px;
+    background: url(@images/bnr-arrow.png) no-repeat center / 100% 100%;
+    margin: 30px auto 0;
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+}

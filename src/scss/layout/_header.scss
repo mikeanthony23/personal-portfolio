@@ -1,1 +1,52 @@
 @use '../abstracts/abstractsIndex' as *;
+
+.header {
+  background-color: $priColor;
+  padding-inline: 20px;
+
+  &__wrapper {
+    max-width: 1282px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 37px 0;
+  }
+
+  &__logo {
+    width: 179px;
+  }
+
+  &__logo-img {
+  }
+
+  &__navigation {
+    margin-inline: auto 11.3%;
+  }
+
+  &__resume-btn {
+  }
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 55px;
+
+  &__item {
+  }
+
+  &__item-link {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  &__item-link:hover,
+  &__item-link:active {
+    text-decoration: underline;
+  }
+}

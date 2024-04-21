@@ -18,6 +18,7 @@ html {
 html,
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 body {
@@ -29,7 +30,6 @@ body {
 }
 
 img {
-  width: 100%;
   max-width: 100%;
 }
 
@@ -41,10 +41,57 @@ h5,
 h6 {
   font-family: $hdrFont;
   font-weight: $headerFontWeight;
+  line-height: 100%;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
 }
 
 .wrapper {
   max-width: $contentWrapper;
   margin: auto;
   position: relative;
+}
+
+.btn {
+  display: block;
+  padding: 7px 38px;
+  font-size: 2.2rem;
+  color: #fff;
+  background-color: $accentColor;
+  border-radius: 5px;
+  max-width: 170px;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 300ms linear;
+  }
+}
+
+.glass {
+  border-radius: 16px;
+  position: relative;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  --webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(21px);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+}
+
+.accent-color {
+  color: $accentColor;
+}
+
+.sub-hdr {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.hdr {
+  font-weight: $headerFontWeight;
+  font-size: $headerFontSize;
 }

@@ -8,7 +8,218 @@
 </head>
 
 <body>
-  <h1>THIS IS A TEMPLATE</h1>
+  <header class="header">
+    <div class="wrapper header__wrapper">
+      <div class="header__container">
+        <figure class="header__logo">
+          <a href="/">
+            <img class="header__logo-img" src="images/main-logo.png" alt="Mike Logo">
+          </a>
+        </figure>
+        <nav class="header__navigation">
+          <ul class="header-nav-list">
+            <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="javascript:;">About</a></li>
+            <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="javascript:;">Projects</a>
+            </li>
+            <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="javascript:;">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="header__resume-btn btn">Resume</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="wrapper banner__wrapper">
+      <div class="banner__container">
+        <div class="banner-information glass">
+          <h2 class="banner-information__title">
+            <small class="banner-information__title--sub-hdr sub-hdr">Hi There!</small>
+            I’m <span class="banner-information__title--accent-color accent-color">Mike Anthony Ygoña</span>
+          </h2>
+          <p class="banner-information__text">
+            A dedicated person who loves coding and is always looking to learn more and get better at it.
+          </p>
+          <a class="banner-information__link" href="#about"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="about" class="about">
+    <div class="wrapper about__wrapper">
+      <div class="about__container">
+        <section class="about-header">
+          <h2 class="about-header__title1 hdr">
+            About <span class="about-header__title1--accent-color accent-color">Me</span>
+          </h2>
+          <p class="about-header__paragraph">
+            During the pandemic lockdown, I seized the opportunity to dive into coding. Armed with determination, I
+            embarked on a journey of self-study that lasted for months. Within a year, I managed to secure a job in the
+            IT industry. Now, I'm proudly part of an esteemed IT company, where I have created hundreds of websites over
+            the past years. Here, I continue to expand my knowledge and skills by immersing myself in new technologies
+            and concepts.
+          </p>
+
+          <h3 class="about-header__title2 hdr">
+            Technologies
+            <small class="about-header__title2--sub-hdr sub-hdr">
+              <span class="accent-color">Involved</span> with
+            </small>
+          </h3>
+        </section>
+
+        <ul class="technology-lists">
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/html.png" alt="html">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/css.png" alt="css">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/js.png" alt="javascript">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/php.png" alt="php">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/mysql.png" alt="mysql">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/wp.png" alt="wordpress">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/nodejs.png" alt="nodejs">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/mongodb.png" alt="mongodb">
+            </figure>
+          </li>
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/sass.png" alt="sass">
+            </figure>
+          </li>
+
+
+          <li class="technology-lists__item">
+            <figure class="technology-lists__figure">
+              <img class="technology-lists__img" src="images/express.png" alt="express">
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <section class="projects">
+    <div class="wrapper projects__wrapper">
+      <div class="projects__container">
+        <div class="projects-header">
+          <h2 class="hdr projects-header__title">
+            My <span class="accent-color">Works</span>
+          </h2>
+        </div>
+        <div class="projects__slider_area">
+          <div class="slider slider--1">
+            <div class="slider__container">
+              <div class="slider__slide">
+                <figure class="slider__figure">
+                  <img class="slider__img" src="images/projects/project-desktop-1.jpg" alt="xx">
+                </figure>
+              </div>
+              <div class="slider__slide">
+                <figure class="slider__figure">
+                  <img class="slider__img" src="images/projects/project-desktop-2.jpg" alt="xx">
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="slider__slider2_wrapper">
+            <div class="slider slider--2">
+              <div class="slider__container ">
+                <div class="slider__slide">
+                  <figure class="slider__figure">
+                    <img class="slider__img" src="images/projects/project-mobile-1.jpg" alt="xx">
+                  </figure>
+                </div>
+                <div class="slider__slide">
+                  <figure class="slider__figure">
+                    <img class="slider__img" src="images/projects/project-mobile-2.jpg" alt="xx">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__navigation">
+            <button class="slider__navigator slider__navigator--prev"></button>
+            <button class="slider__navigator slider__navigator--next"></button>
+          </div>
+
+        </div>
+        <a href="javascript:;" class="slider__visit-btn btn">Visit Site</a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="contact">
+    <div class="wrapper contact_wrapper">
+      <div class="contact_container">
+
+        <div class="contact-header">
+          <h2 class="contact-header__title">
+            Contact <span class="accent-color">Me</span>
+          </h2>
+        </div>
+
+        <form action="#" class="form-area">
+          <fieldset class="form-area__fieldset">
+            <label class="form-area_label form-area_label--name">
+              <small class="form-area_placeholder">Full Name*</small>
+              <input class="form-area__input form-area__input--name" type="text" name="fullname" id="">
+            </label>
+            <label class="form-area_label form-area_label--email">
+              <small class="form-area_placeholder">Email*</small>
+              <input class="form-area__input form-area__input--email" type="email" name="email" id="">
+            </label>
+          </fieldset>
+          <label class="form-area_label form-area_label--text-area">
+            <small class="form-area_placeholder">Message*</small>
+            <textarea class="form-area__input form-area__input-message" name="message" id=""> </textarea>
+          </label>
+          <button>Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
 </body>
 
 </html>
