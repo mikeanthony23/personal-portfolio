@@ -10,6 +10,7 @@ body::after {
 }
 
 .projects {
+  padding: 0 20px;
   background: linear-gradient(102.89deg, #0c0d1b 0%, #1c1e38 80.66%);
   text-align: center;
   color: #fff;
@@ -24,6 +25,8 @@ body::after {
 
   &__slider_area {
     position: relative;
+    max-width: 1024px;
+    margin: auto;
   }
 }
 
@@ -58,7 +61,8 @@ body::after {
     position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: calc(100vw - 40px);
+    max-width: 1280px;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
@@ -88,7 +92,8 @@ body::after {
     height: 315px;
     position: absolute;
     bottom: -110px;
-    right: 270px;
+    left: 24%;
+    margin-left: 50%;
     &::after {
       content: url(@images/projects/mobile-project-frame.png);
       top: 0;

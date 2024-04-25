@@ -1,6 +1,7 @@
 @use '../abstracts/abstractsIndex' as *;
 
 .about {
+  padding: 0 20px;
   background: linear-gradient(259.93deg, #070712 0%, #1e213d 100%);
   color: #fff;
   &__wrapper {

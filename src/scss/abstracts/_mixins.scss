@@ -1,5 +1,13 @@
+@use './variables' as *;
+
 @mixin mediaMin($size) {
   @media screen and (min-width: $size) {
     @content;
   }
+}
+
+@mixin formFont {
+  font-size: 1.7rem;
+  color: #fff;
+  font-family: $bodyFont;
 }

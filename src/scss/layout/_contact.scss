@@ -1,0 +1,105 @@
+@use '../abstracts/abstractsIndex' as *;
+
+.contact {
+  padding: 0 20px;
+  background: linear-gradient(259.93deg, #070712 0%, #1e213d 100%);
+  color: #fff;
+  text-align: center;
+  &__wrapper {
+    max-width: 1020px;
+  }
+
+  &__container {
+    min-height: 631px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.contact-header {
+  margin-bottom: 45px;
+  &__title {
+    font-size: $hdrFont;
+    font-size: $headerFontSize;
+    font-weight: $headerFontWeight;
+  }
+}
+
+.form-area {
+  $gap: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  &__fieldset {
+    display: flex;
+    justify-content: space-between;
+    gap: $gap;
+  }
+  &__label {
+    display: block;
+    position: relative;
+    height: 60px;
+    background: linear-gradient(
+      152.97deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(21px);
+    border-radius: 10px;
+    &--email,
+    &--name {
+      width: 50%;
+      max-width: 500px;
+    }
+    &--name {
+    }
+    &--email {
+    }
+    &--text-area {
+      height: 135px;
+    }
+  }
+  &__placeholder {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    transition: transform 300ms linear;
+    // opacity: 0;
+    @include formFont;
+    // &:hover {
+    //   opacity: 1;
+    //   transform: translateY(-29px);
+    // }
+  }
+  &__input {
+    @include formFont;
+    padding-inline: 25px;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: inherit;
+    outline: none;
+    &:valid + .form-area__placeholder,
+    &:focus + .form-area__placeholder {
+      transform: translateY(-29px);
+    }
+    &--name {
+    }
+    &--email {
+    }
+    &--text-area {
+      padding-top: 16px;
+      height: 100%;
+      resize: none;
+      overflow: hidden;
+    }
+  }
+
+  &__btn {
+    margin: auto;
+  }
+}

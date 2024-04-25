@@ -188,8 +188,8 @@
   </section>
 
   <div class="contact">
-    <div class="wrapper contact_wrapper">
-      <div class="contact_container">
+    <div class="wrapper contact__wrapper">
+      <div class="contact__container">
 
         <div class="contact-header">
           <h2 class="contact-header__title">
@@ -199,20 +199,20 @@
 
         <form action="#" class="form-area">
           <fieldset class="form-area__fieldset">
-            <label class="form-area_label form-area_label--name">
-              <small class="form-area_placeholder">Full Name*</small>
-              <input class="form-area__input form-area__input--name" type="text" name="fullname" id="">
+            <label class="form-area__label form-area__label--name">
+              <input class="form-area__input form-area__input--name" type="text" name="fullname" id="" required>
+              <small class="form-area__placeholder">Full Name*</small>
             </label>
-            <label class="form-area_label form-area_label--email">
-              <small class="form-area_placeholder">Email*</small>
-              <input class="form-area__input form-area__input--email" type="email" name="email" id="">
+            <label class="form-area__label form-area__label--email">
+              <input class="form-area__input form-area__input--email" type="text" name="email" id="" required>
+              <small class="form-area__placeholder">Email*</small>
             </label>
           </fieldset>
-          <label class="form-area_label form-area_label--text-area">
-            <small class="form-area_placeholder">Message*</small>
-            <textarea class="form-area__input form-area__input-message" name="message" id=""> </textarea>
+          <label class="form-area__label form-area__label--text-area">
+            <textarea class="form-area__input form-area__input--text-area" name="message" id="" required> </textarea>
+            <small class="form-area__placeholder">Message*</small>
           </label>
-          <button>Submit</button>
+          <button class="form-area__btn btn">Submit</button>
         </form>
 
       </div>

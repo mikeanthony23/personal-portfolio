@@ -50,6 +50,11 @@ button {
   cursor: pointer;
 }
 
+fieldset,
+input {
+  border: none;
+}
+
 .wrapper {
   max-width: $contentWrapper;
   margin: auto;
