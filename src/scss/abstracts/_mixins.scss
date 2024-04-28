@@ -63,7 +63,6 @@
     @if ($direction == bottom) {
       right: 0 !important;
       top: 100%;
-      right: 0;
     }
   }
   &:hover::before {
