@@ -2,7 +2,7 @@
 
 .about {
   padding: 0 20px;
-  background: linear-gradient(259.93deg, #070712 0%, #1e213d 100%);
+  background: $priColor;
   color: #fff;
   &__wrapper {
     max-width: 1530px;
@@ -37,8 +37,7 @@
 
 .technology-lists {
   margin-top: 37px;
-  display: flex;
-  justify-content: space-between;
+  @include flexBetween;
   gap: 15px;
   &__item {
   }

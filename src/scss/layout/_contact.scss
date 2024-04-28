@@ -2,11 +2,10 @@
 
 .contact {
   padding: 0 20px;
-  background: linear-gradient(259.93deg, #070712 0%, #1e213d 100%);
+  background: $priColor;
   color: #fff;
   text-align: center;
   &__wrapper {
-    max-width: 1020px;
   }
 
   &__container {
@@ -34,8 +33,7 @@
   flex-direction: column;
   gap: $gap;
   &__fieldset {
-    display: flex;
-    justify-content: space-between;
+    @include flexBetween;
     gap: $gap;
   }
   &__label {
@@ -52,7 +50,6 @@
     &--email,
     &--name {
       width: 50%;
-      max-width: 500px;
     }
     &--name {
     }
@@ -67,12 +64,7 @@
     top: 15px;
     left: 25px;
     transition: transform 300ms linear;
-    // opacity: 0;
     @include formFont;
-    // &:hover {
-    //   opacity: 1;
-    //   transform: translateY(-29px);
-    // }
   }
   &__input {
     @include formFont;

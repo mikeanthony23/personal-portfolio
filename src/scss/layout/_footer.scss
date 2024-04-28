@@ -1,0 +1,40 @@
+@use '../abstracts/abstractsIndex' as *;
+
+.footer {
+  background: $secColor;
+
+  &__wrapper {
+  }
+  &__container {
+    @include flexBetween30;
+    align-items: center;
+    min-height: 150px;
+  }
+
+  .socials {
+    &__list {
+      @include flexBetween30;
+      align-items: center;
+      gap: 15px;
+    }
+    &__item {
+    }
+    &__link {
+      display: block;
+      width: 50px;
+    }
+  }
+}
+
+.footer-nav {
+  &__list {
+    @include flexBetween30;
+  }
+  &__item {
+    @include flexBetween30;
+    align-items: center;
+  }
+  &__link {
+    color: #fff;
+  }
+}

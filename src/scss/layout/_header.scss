@@ -9,10 +9,8 @@
   }
 
   &__container {
-    display: flex;
-    justify-content: space-between;
+    @include flexBetween30;
     align-items: center;
-    gap: 20px;
     padding: 37px 0;
   }
 
@@ -32,8 +30,7 @@
 }
 
 .header-nav-list {
-  display: flex;
-  justify-content: space-between;
+  @include flexBetween;
   align-items: center;
   gap: 55px;
 
