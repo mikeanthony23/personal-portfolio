@@ -2,7 +2,8 @@
 
 .banner {
   padding: 0 20px;
-  background: $secColor;
+  // background: $secColor;
+  background: url(@images/banner/banner-bg.jpg) no-repeat center / 1920px 1000px;
   &__wrapper {
   }
 
@@ -25,6 +26,7 @@
   text-align: center;
   width: 100%;
   padding: 135px 0;
+  @include glass(rgba(255, 255, 255, 0.1), 1px solid rgba(245, 86, 86, 0.29));
   &__title {
     font-weight: 400;
     font-size: $headerFontSize;
@@ -44,7 +46,7 @@
     display: block;
     width: 22px;
     height: 42px;
-    background: url(@images/bnr-arrow.png) no-repeat center / 100% 100%;
+    background: url(@images/banner/bnr-arrow.png) no-repeat center / 100% 100%;
     margin: 30px auto 0;
     &:hover {
       filter: brightness(0) invert(1);

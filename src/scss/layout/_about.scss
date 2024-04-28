@@ -37,7 +37,7 @@
 
 .technology-lists {
   margin-top: 37px;
-  @include flexBetween;
+  @include flexBetween(15px);
   gap: 15px;
   &__item {
   }

@@ -83,10 +83,24 @@ body::after {
       transform: scale(-1);
     }
   }
-  &__visit-btn {
+  &__btn-container {
+    @include flexBetween;
+    max-width: 430px;
     margin: 150px auto 0;
-    padding-block: 10px;
   }
+
+  &__btn {
+    // padding-block: 10px;
+    // max-width: 230px;
+    &--visit {
+      @include btn(left);
+    }
+    &--code {
+      @include btn(right);
+      max-width: 230px;
+    }
+  }
+
   &__slider2_wrapper {
     width: 150px;
     height: 315px;

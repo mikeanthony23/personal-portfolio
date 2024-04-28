@@ -8,12 +8,12 @@
 </head>
 
 <body>
-  <header class="header">
+  <header id="header" class="header">
     <div class="wrapper header__wrapper">
       <div class="header__container">
         <figure class="header__logo">
           <a href="/">
-            <img class="header__logo-img" src="images/main-logo.png" alt="Mike Logo">
+            <img class="header__logo-img" src="images/header/main-logo.png" alt="Mike Logo">
           </a>
         </figure>
         <nav class="header__navigation">
@@ -24,15 +24,15 @@
             <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="javascript:;">Contact</a></li>
           </ul>
         </nav>
-        <button class="header__resume-btn btn">Resume</button>
+        <button class="header__resume-btn"><span>Resume</span></button>
       </div>
     </div>
   </header>
 
-  <section class="banner">
+  <section id="banner" class="banner">
     <div class="wrapper banner__wrapper">
       <div class="banner__container">
-        <div class="banner-information glass">
+        <div class="banner-information">
           <h2 class="banner-information__title">
             <small class="banner-information__title--sub-hdr sub-hdr">Hi There!</small>
             I’m <span class="banner-information__title--accent-color accent-color">Mike Anthony Ygoña</span>
@@ -124,7 +124,6 @@
             </figure>
           </li>
 
-
           <li class="technology-lists__item">
             <figure class="technology-lists__figure">
               <img class="technology-lists__img" src="images/skills/express.png" alt="express">
@@ -135,7 +134,7 @@
     </div>
   </main>
 
-  <section class="projects">
+  <section id="projects" class="projects">
     <div class="wrapper projects__wrapper">
       <div class="projects__container">
         <div class="projects-header">
@@ -181,13 +180,16 @@
           </div>
 
         </div>
-        <a href="javascript:;" class="slider__visit-btn btn">Visit Site</a>
+        <div class="slider__btn-container">
+          <a href="javascript:;" class="slider__btn slider__btn--visit"><span>Visit Site</span></a>
+          <a href="javascript:;" class="slider__btn slider__btn--code"><span>Source Code</span></a>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <div class="wrapper contact__wrapper">
       <div class="contact__container">
 
@@ -212,36 +214,36 @@
             <textarea class="form-area__input form-area__input--text-area" name="message" id="" required></textarea>
             <small class="form-area__placeholder">Message*</small>
           </label>
-          <button class="form-area__btn btn">Submit</button>
+          <button class="form-area__btn"><span>Submit</span></button>
         </form>
 
       </div>
     </div>
   </section>
 
-  <div class="footer">
+  <footer id="footer" class="footer">
     <div class="wrapper footer__wrapper">
       <div class="footer__container">
         <div class="socials">
           <ul class="socials__list">
             <li class="socials__item">
               <a class="socials__link" href="javascript:;">
-                <figure>
-                  <img src="images/footer/linkedin.png" alt="linkedin">
+                <figure class="socials__figure">
+                  <img class="socials__img" src="images/footer/linkedin.png" alt="linkedin">
                 </figure>
               </a>
             </li>
             <li class="socials__item">
               <a class="socials__link" href="javascript:;">
-                <figure>
-                  <img src="images/footer/github.png" alt="github">
+                <figure class="socials__figure">
+                  <img class="socials__img" src="images/footer/github.png" alt="github">
                 </figure>
               </a>
             </li>
             <li class="socials__item">
               <a class="socials__link" href="javascript:;">
-                <figure>
-                  <img src="images/footer/gmail.png" alt="gmail">
+                <figure class="socials__figure">
+                  <img class="socials__img" src="images/footer/gmail.png" alt="gmail">
                 </figure>
               </a>
             </li>
@@ -258,7 +260,7 @@
       </div>
     </div>
 
-  </div>
+  </footer>
 
 </body>
 

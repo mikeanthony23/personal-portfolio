@@ -9,7 +9,7 @@
   }
 
   &__container {
-    @include flexBetween30;
+    @include flexBetween;
     align-items: center;
     padding: 37px 0;
   }
@@ -26,14 +26,13 @@
   }
 
   &__resume-btn {
+    @include btn(left);
   }
 }
 
 .header-nav-list {
-  @include flexBetween;
+  @include flexBetween(55px);
   align-items: center;
-  gap: 55px;
-
   &__item {
   }
 

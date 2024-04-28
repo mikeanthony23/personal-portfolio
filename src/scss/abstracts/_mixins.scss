@@ -1,7 +1,7 @@
 @use './variables' as *;
 
-@mixin mediaMin($size) {
-  @media screen and (min-width: $size) {
+@mixin mediaMax($size) {
+  @media screen and (max-width: $size) {
     @content;
   }
 }
@@ -12,13 +12,68 @@
   font-family: $bodyFont;
 }
 
-@mixin flexBetween {
+@mixin flexBetween($gap: 30px) {
   display: flex;
   justify-content: space-between;
+  gap: $gap;
 }
 
-@mixin flexBetween30 {
+@mixin glass($bgColor: rgba(255, 255, 255, 0.06), $border: 1px solid rgba(235, 235, 235, 0.29)) {
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: $bgColor;
+  border: $border;
+}
+
+@mixin btn($direction: left) {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 38px;
+  font-size: 2.2rem;
+  line-height: 100%;
+  color: #fff;
+  background-color: $accentColor;
+  border-radius: 5px;
+  max-width: 170px;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    background-color: none;
+    color: #000;
+    transition: all 300ms linear;
+  }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    transition: all 300ms linear;
+    @if ($direction == left) {
+      right: 100%;
+    }
+    @if ($direction == right) {
+      right: -100%;
+    }
+    @if ($direction == bottom) {
+      right: 0 !important;
+      top: 100%;
+      right: 0;
+    }
+  }
+  &:hover::before {
+    right: 0;
+    @if ($direction == bottom) {
+      top: 0;
+    }
+  }
+  & span {
+    position: relative;
+    z-index: 2;
+  }
 }

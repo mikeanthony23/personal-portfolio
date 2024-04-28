@@ -68,3 +68,16 @@ const slider = function (sliderParent) {
 }
 slider('.slider--1 .slider__container')
 slider('.slider--2 .slider__container')
+
+function parallax(element, speed) {
+  const scrollPosition = window.scrollY - 200
+  console.log(scrollPosition)
+  const parallaxElement = document.querySelector(element)
+  parallaxElement.style.backgroundPositionY = scrollPosition * speed + 'px'
+}
+
+parallax('.banner', 0.5)
+
+window.addEventListener('scroll', function () {
+  parallax('.banner', 0.5)
+})
