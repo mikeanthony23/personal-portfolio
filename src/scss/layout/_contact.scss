@@ -41,6 +41,7 @@
     display: block;
     position: relative;
     height: 60px;
+    overflow: hidden;
     @include glass;
     &--email,
     &--name {
@@ -53,17 +54,20 @@
     &--text-area {
       height: 135px;
     }
+    & .error {
+      display: none;
+    }
   }
   &__placeholder {
     position: absolute;
     top: 15px;
     left: 25px;
-    transition: transform 300ms linear;
+    transition: all 300ms linear;
     @include formFont;
   }
   &__input {
     @include formFont;
-    padding-inline: 25px;
+    padding: 10px 25px 0;
     width: 100%;
     height: 100%;
     background: none;
@@ -72,18 +76,34 @@
     outline: none;
     &:valid + .form-area__placeholder,
     &:focus + .form-area__placeholder {
-      transform: translateY(-29px);
+      transform: translateY(-15px);
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+    &--invalid {
+      border: solid 1px red;
     }
     &--name {
     }
     &--email {
     }
     &--text-area {
-      padding-top: 16px;
+      padding-top: 21px;
       height: 100%;
       resize: none;
       overflow: hidden;
     }
+  }
+
+  &__invalid {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 1.2rem;
+    transition: all 300ms linear;
+    border-color: red;
+    color: red;
+    animation: fadeInBottom 300ms linear;
   }
 
   &__btn {

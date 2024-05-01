@@ -69,15 +69,43 @@ const slider = function (sliderParent) {
 slider('.slider--1 .slider__container')
 slider('.slider--2 .slider__container')
 
-function parallax(element, speed) {
+const parallax = function (element, speed) {
   const scrollPosition = window.scrollY - 200
-  console.log(scrollPosition)
   const parallaxElement = document.querySelector(element)
   parallaxElement.style.backgroundPositionY = scrollPosition * speed + 'px'
 }
 
 parallax('.banner', 0.5)
 
+const emailForm = document.querySelector('.form-area')
+
+const isValidEmail = function (email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
+
+// handle form submission
+const handleFormSubmit = function (event) {
+  event.preventDefault()
+
+  const emailInput = document.querySelector('.form-area__input--email')
+  const errorMessage = document.querySelector('.form-area__invalid--email')
+  const emailPlaceholder = document.querySelector('.form-area__placeholder--email')
+
+  const email = emailInput.value.trim()
+  if (!isValidEmail(email)) {
+    errorMessage.classList.remove('error')
+    emailPlaceholder.classList.add('error')
+  } else {
+    emailPlaceholder.classList.remove('error')
+    errorMessage.classList.add('error')
+  }
+}
+
+// Event Listeners
+
+emailForm.addEventListener('submit', handleFormSubmit)
+emailForm.addEventListener('change', handleFormSubmit)
 window.addEventListener('scroll', function () {
   parallax('.banner', 0.5)
 })
