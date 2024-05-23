@@ -8,8 +8,7 @@
     max-width: 1530px;
   }
   &__container {
-    min-height: 809px;
-    padding: 180px 0;
+    padding-top: 180px;
   }
 }
 
@@ -36,14 +35,39 @@
 }
 
 .technology-lists {
-  margin-top: 37px;
+  margin-top: 40px;
+  padding-bottom: 180px;
+  overflow: hidden;
+  position: relative;
+  animation: marquee 50s linear infinite;
+  width: 200%;
   @include flexBetween(15px);
-  gap: 15px;
   &__item {
   }
   &__figure {
+    position: relative;
   }
-  &__image {
+  &__img {
+    cursor: pointer;
     border-radius: 20px;
+    transition: transform 400ms linear;
+    &:hover {
+      transform: scale(0.7) translateY(-15px);
+    }
+    &:hover + figcaption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 400ms linear;
+    transform: translateY(50px);
   }
 }

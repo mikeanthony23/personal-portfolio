@@ -26,7 +26,8 @@
   text-align: center;
   width: 100%;
   padding: 135px 0;
-  @include glass(rgba(255, 255, 255, 0.1), 1px solid rgba(245, 86, 86, 0.29));
+  border: solid 1px #ffffff0a;
+  @include glass(rgba(51, 28, 215, 0.02));
   &__title {
     font-weight: 400;
     font-size: $headerFontSize;

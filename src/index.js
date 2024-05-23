@@ -102,8 +102,15 @@ const handleFormSubmit = function (event) {
   }
 }
 
+const marquee = function () {
+  const marqueeContainer = document.querySelector('.technology-lists')
+  const marqueeClone = marqueeContainer.cloneNode(true)
+  ;[...marqueeClone.querySelectorAll('li')].forEach(e => marqueeContainer.append(e))
+}
+
 // Event Listeners
 
+window.addEventListener('DOMContentLoaded', marquee)
 emailForm.addEventListener('submit', handleFormSubmit)
 emailForm.addEventListener('change', handleFormSubmit)
 window.addEventListener('scroll', function () {
