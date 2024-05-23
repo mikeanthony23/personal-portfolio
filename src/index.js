@@ -4,7 +4,7 @@ import 'core-js/stable'
 import 'regenerator-runtime'
 import 'whatwg-fetch'
 
-const slider = function (sliderParent) {
+const slider = function (sliderParent, setCurrentSlide) {
   const slider = document.querySelector(sliderParent)
   const slides = slider.querySelectorAll('.slider__slide')
   const totalSlides = slides.length
@@ -22,7 +22,28 @@ const slider = function (sliderParent) {
     }
 
     const offset = -currentSlide * 100
+
     slider.style.transform = `translateX(${offset}%)`
+
+    if (!setCurrentSlide) return
+
+    slider.setAttribute('data-current-slide', currentSlide + 1)
+
+    const currentShownSlide = [...document.querySelectorAll('.slider--2 .slider__slide')]
+    const sourceCodeLink = currentShownSlide[currentSlide].dataset.sourceCode
+    const sourceCodeButton = document.querySelector('.slider__btn--code')
+    const siteLinkButton = document.querySelector('.slider__btn--visit')
+
+    siteLinkButton.setAttribute('href', currentShownSlide[currentSlide].dataset.siteLink)
+
+    if (!sourceCodeLink) {
+      sourceCodeButton.classList.add('hidden')
+      sourceCodeButton.setAttribute('href', 'javascript:;')
+    }
+    if (sourceCodeLink) {
+      sourceCodeButton.classList.remove('hidden')
+      sourceCodeButton.setAttribute('href', currentShownSlide[currentSlide].dataset.sourceCode)
+    }
   }
 
   const changeSlide = function (direction) {
@@ -67,7 +88,7 @@ const slider = function (sliderParent) {
   showSlide(currentSlide)
 }
 slider('.slider--1 .slider__container')
-slider('.slider--2 .slider__container')
+slider('.slider--2 .slider__container', true)
 
 const parallax = function (element, speed) {
   const scrollPosition = window.scrollY - 200
