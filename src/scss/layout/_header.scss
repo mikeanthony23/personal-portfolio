@@ -39,10 +39,15 @@
   &__item-link {
     color: #fff;
     font-size: 2rem;
+    transition: all 300ms linear;
+    text-decoration-thickness: 0;
+    text-underline-offset: 0;
   }
 
   &__item-link:hover,
   &__item-link:active {
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 7px;
   }
 }

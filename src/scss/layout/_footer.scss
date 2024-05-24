@@ -51,8 +51,13 @@
   }
   &__link {
     color: #fff;
+    text-decoration-thickness: 0;
+    text-underline-offset: 0;
+    transition: 300ms linear;
     &:hover {
-      text-decoration: underline;
+      text-decoration-line: underline;
+      text-decoration-thickness: 4px;
+      text-underline-offset: 7px;
     }
   }
 }
