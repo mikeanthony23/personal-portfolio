@@ -98,7 +98,6 @@ const parallax = function (element, speed) {
 
 parallax('.banner', 0.5)
 
-const emailForm = document.querySelector('.form-area')
 const nameInput = document.querySelector('.form-area__input--name')
 const emailInput = document.querySelector('.form-area__input--email')
 const msgInput = document.querySelector('.form-area__input--text-area')
@@ -148,13 +147,8 @@ const emailValidation = function () {
   }
 }
 
-// handle form submission
-const handleFormSubmit = function (event) {
-  event.preventDefault()
-
-  nameValidation()
-  emailValidation()
-  msgValidation()
+if (emailInput.value.length >= 1) {
+  emailInput.focus()
 }
 
 const marquee = function () {
@@ -166,12 +160,9 @@ const marquee = function () {
 // Event Listeners
 
 window.addEventListener('DOMContentLoaded', marquee)
-
-emailForm.addEventListener('submit', handleFormSubmit)
 nameInput.addEventListener('input', nameValidation)
 emailInput.addEventListener('input', emailValidation)
 msgInput.addEventListener('input', msgValidation)
-
 window.addEventListener('scroll', function () {
   parallax('.banner', 0.5)
 })
