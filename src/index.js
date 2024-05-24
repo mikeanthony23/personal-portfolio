@@ -99,28 +99,62 @@ const parallax = function (element, speed) {
 parallax('.banner', 0.5)
 
 const emailForm = document.querySelector('.form-area')
+const nameInput = document.querySelector('.form-area__input--name')
+const emailInput = document.querySelector('.form-area__input--email')
+const msgInput = document.querySelector('.form-area__input--text-area')
+
+const nameValidation = function () {
+  const nameErrorMsg = document.querySelector('.form-area__invalid--name')
+  const namePlaceholder = document.querySelector('.form-area__placeholder--name')
+
+  if (nameInput.value.trim() === '') {
+    nameErrorMsg.classList.remove('error')
+    namePlaceholder.classList.add('error')
+  } else {
+    namePlaceholder.classList.remove('error')
+    nameErrorMsg.classList.add('error')
+  }
+}
+
+const msgValidation = function () {
+  const msgErrorMsg = document.querySelector('.form-area__invalid--text-area')
+  const msgPlaceholder = document.querySelector('.form-area__placeholder--text-area')
+
+  if (msgInput.value.trim() === '') {
+    msgErrorMsg.classList.remove('error')
+    msgPlaceholder.classList.add('error')
+  } else {
+    msgPlaceholder.classList.remove('error')
+    msgErrorMsg.classList.add('error')
+  }
+}
 
 const isValidEmail = function (email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return emailRegex.test(email)
 }
 
+const emailValidation = function () {
+  const emailErrorMsg = document.querySelector('.form-area__invalid--email')
+  const emailPlaceholder = document.querySelector('.form-area__placeholder--email')
+  const email = emailInput.value.trim()
+
+  if (!isValidEmail(email)) {
+    emailErrorMsg.classList.remove('error')
+    emailPlaceholder.classList.add('error')
+  } else {
+    emailPlaceholder.classList.remove('error')
+    emailErrorMsg.classList.add('error')
+  }
+}
+
 // handle form submission
 const handleFormSubmit = function (event) {
   event.preventDefault()
 
-  const emailInput = document.querySelector('.form-area__input--email')
-  const errorMessage = document.querySelector('.form-area__invalid--email')
-  const emailPlaceholder = document.querySelector('.form-area__placeholder--email')
-
-  const email = emailInput.value.trim()
-  if (!isValidEmail(email)) {
-    errorMessage.classList.remove('error')
-    emailPlaceholder.classList.add('error')
-  } else {
-    emailPlaceholder.classList.remove('error')
-    errorMessage.classList.add('error')
-  }
+  nameValidation()
+  emailValidation()
+  msgValidation()
 }
 
 const marquee = function () {
@@ -132,8 +166,12 @@ const marquee = function () {
 // Event Listeners
 
 window.addEventListener('DOMContentLoaded', marquee)
+
 emailForm.addEventListener('submit', handleFormSubmit)
-emailForm.addEventListener('change', handleFormSubmit)
+nameInput.addEventListener('input', nameValidation)
+emailInput.addEventListener('input', emailValidation)
+msgInput.addEventListener('input', msgValidation)
+
 window.addEventListener('scroll', function () {
   parallax('.banner', 0.5)
 })
