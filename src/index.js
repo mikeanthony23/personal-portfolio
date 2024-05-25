@@ -163,6 +163,30 @@ const marquee = function () {
   ;[...marqueeClone.querySelectorAll('li')].forEach(e => marqueeContainer.append(e))
 }
 
+emailjs.init({
+  publicKey: 'F5xBPiDsOTf1Txr2S',
+})
+
+document.querySelector('.form-area').addEventListener('submit', function (event) {
+  event.preventDefault()
+
+  const emailContent = {
+    from_name: document.querySelector('.form-area__input--name').value,
+    from_email: document.querySelector('.form-area__input--email').value,
+    message: document.querySelector('.form-area__input--text-area').value,
+  }
+
+  // these IDs from the previous steps
+  emailjs.send('service_73vcqr1', 'template_u2gcl6m', emailContent).then(
+    () => {
+      alert('SUCCESS!')
+    },
+    error => {
+      alert('FAILED...', error)
+    },
+  )
+})
+
 // Event Listeners
 
 window.addEventListener('DOMContentLoaded', marquee)
