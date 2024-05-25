@@ -33,14 +33,20 @@ const slider = function (sliderParent, setCurrentSlide) {
     const sourceCodeLink = currentShownSlide[currentSlide].dataset.sourceCode
     const sourceCodeButton = document.querySelector('.slider__btn--code')
     const siteLinkButton = document.querySelector('.slider__btn--visit')
+    const siteLink = currentShownSlide[currentSlide].dataset.siteLink
 
-    siteLinkButton.setAttribute('href', currentShownSlide[currentSlide].dataset.siteLink)
+    if (!siteLink) {
+      siteLinkButton.classList.add('hidden')
+      siteLinkButton.setAttribute('href', 'javascript:;')
+    } else {
+      siteLinkButton.classList.remove('hidden')
+      siteLinkButton.setAttribute('href', currentShownSlide[currentSlide].dataset.siteLink)
+    }
 
     if (!sourceCodeLink) {
       sourceCodeButton.classList.add('hidden')
       sourceCodeButton.setAttribute('href', 'javascript:;')
-    }
-    if (sourceCodeLink) {
+    } else {
       sourceCodeButton.classList.remove('hidden')
       sourceCodeButton.setAttribute('href', currentShownSlide[currentSlide].dataset.sourceCode)
     }

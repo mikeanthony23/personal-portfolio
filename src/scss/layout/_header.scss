@@ -1,9 +1,9 @@
 @use '../abstracts/abstractsIndex' as *;
 
 .header {
+  position: relative;
   background-color: $priColor;
   padding-inline: 20px;
-
   &__wrapper {
     max-width: 1282px;
   }

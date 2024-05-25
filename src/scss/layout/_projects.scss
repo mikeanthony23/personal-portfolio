@@ -1,19 +1,10 @@
 @use '../abstracts/abstractsIndex' as *;
 
-body::after {
-  // content: url('@images/screenshot.jpg');
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.55;
-  pointer-events: none;
-}
-
 .projects {
   padding: 0 20px;
-  background: $secColor;
   text-align: center;
   color: #fff;
+  @include sectionBg;
   &__wrapper {
   }
   &__container {
@@ -34,12 +25,12 @@ body::after {
   margin: 50px auto 0;
   overflow: hidden;
   width: 620px;
-  height: 388px;
+  height: 418px;
   &::after {
     content: url(@images/projects/desktop-project-frame.png);
     position: absolute;
-    top: -8px;
-    left: 49.9%;
+    top: -7px;
+    left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
   }
@@ -86,15 +77,14 @@ body::after {
   &__btn-container {
     @include flexBetween;
     justify-content: center;
-    max-width: 430px;
+    max-width: 470px;
     margin: 150px auto 0;
   }
 
   &__btn {
-    // padding-block: 10px;
-    // max-width: 230px;
     &--visit {
       @include btn(left);
+      max-width: 210px;
     }
     &--code {
       @include btn(right);
@@ -109,7 +99,7 @@ body::after {
     width: 150px;
     height: 315px;
     position: absolute;
-    bottom: -110px;
+    bottom: -90px;
     left: 24%;
     margin-left: 50%;
     &::after {
