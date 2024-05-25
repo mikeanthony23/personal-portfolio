@@ -86,3 +86,13 @@
   position: relative;
   z-index: 2;
 }
+
+@mixin alertMsg() {
+  background: #fff;
+  height: 240px;
+  max-width: 660px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

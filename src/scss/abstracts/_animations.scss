@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 @keyframes fadeInBottom {
   0% {
     opacity: 0;
@@ -15,5 +17,23 @@
   }
   100% {
     left: -100%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    color: #fff;
+    transform: translateY(0);
+    margin-left: 0;
+  }
+  25% {
+    color: $accentColor;
+    transform: translateY(-15px);
+    margin-left: 10px;
+    text-shadow: 0 15px 5px rgba(0, 0, 0, 1);
+  }
+  100% {
+    color: $accentColor;
+    transform: translateY(0);
   }
 }
