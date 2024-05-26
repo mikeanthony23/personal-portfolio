@@ -2,7 +2,6 @@ import '@src/scss/main.scss'
 
 import 'core-js/stable'
 import 'regenerator-runtime'
-import 'whatwg-fetch'
 
 const slider = function (sliderParent, setCurrentSlide) {
   const slider = document.querySelector(sliderParent)
@@ -72,25 +71,6 @@ const slider = function (sliderParent, setCurrentSlide) {
     }
   })
 
-  let startX
-  let endX
-
-  slider.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX
-  })
-
-  slider.addEventListener('touchmove', e => {
-    endX = e.touches[0].clientX
-  })
-
-  slider.addEventListener('touchend', () => {
-    if (startX - endX > 50) {
-      changeSlide(1) // swipe left
-    } else if (endX - startX > 50) {
-      changeSlide(-1) // swipe right
-    }
-  })
-
   showSlide(currentSlide)
 }
 slider('.slider--1 .slider__container')
@@ -101,8 +81,6 @@ const parallax = function (element, speed) {
   const parallaxElement = document.querySelector(element)
   parallaxElement.style.backgroundPositionY = scrollPosition * speed + 'px'
 }
-
-parallax('.banner', 0.5)
 
 const nameInput = document.querySelector('.form-area__input--name')
 const emailInput = document.querySelector('.form-area__input--email')
@@ -206,11 +184,29 @@ document.querySelector('.form-area').addEventListener('submit', function (event)
     </div>`,
       )
       setTimeout(() => {
-        document.querySelector('.contact__loader-container').remove()
+        document.querySelector('.contact__alert-msg').classList.add('contact__alert-msg--sent')
       }, 1000)
+
+      setTimeout(() => {
+        document.querySelector('.contact__loader-container').remove()
+      }, 2000)
     },
-    error => {
-      alert('FAILED...', error)
+    () => {
+      document.querySelector('.contact__loader-container').remove()
+      contactFormSection.insertAdjacentHTML(
+        'afterbegin',
+        `<div class="contact__loader-container">
+        <div class="contact__alert-msg contact__alert-msg--error">
+          <span>Sending failed please try again</span>
+        </div>
+      </div>`,
+      )
+      setTimeout(() => {
+        document.querySelector('.contact__alert-msg').classList.add('contact__alert-msg--exit')
+      }, 1500)
+      setTimeout(() => {
+        document.querySelector('.contact__loader-container').remove()
+      }, 2000)
     },
   )
 })
@@ -221,6 +217,3 @@ window.addEventListener('DOMContentLoaded', marquee)
 nameInput.addEventListener('input', nameValidation)
 emailInput.addEventListener('input', emailValidation)
 msgInput.addEventListener('input', msgValidation)
-window.addEventListener('scroll', function () {
-  parallax('.banner', 0.5)
-})

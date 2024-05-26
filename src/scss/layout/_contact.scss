@@ -19,8 +19,10 @@
     transform: translateX(-50%) translateY(-50%);
   }
   &__loader {
+    animation: zoomIn 500ms linear;
     @include alertMsg;
     @include glass;
+
     & span {
       transition: all 0.5s;
       animation: animate 2s infinite;
@@ -30,11 +32,27 @@
   &__alert-msg {
     @include alertMsg;
     @include glass;
+    opacity: 1;
+    transition: all 500ms linear;
     & span {
       color: #fff;
       font-size: 5rem;
       font-weight: 600;
       display: inline-block;
+    }
+
+    &--sent {
+      opacity: 0;
+      transform: translate3d(0, 200%, 0);
+    }
+    &--error {
+      & span {
+        font-size: 3.6rem;
+        color: $accentColor;
+      }
+    }
+    &--exit {
+      opacity: 0;
     }
 
     & span:nth-child(1) {
