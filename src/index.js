@@ -138,7 +138,10 @@ if (emailInput.value.length >= 1) {
 const marquee = function () {
   const marqueeContainer = document.querySelector('.technology-lists')
   const marqueeClone = marqueeContainer.cloneNode(true)
-  ;[...marqueeClone.querySelectorAll('li')].forEach(e => marqueeContainer.append(e))
+  ;[...marqueeClone.querySelectorAll('li')].forEach(e => {
+    e.classList.add('clone')
+    marqueeContainer.append(e)
+  })
 }
 
 emailjs.init({
