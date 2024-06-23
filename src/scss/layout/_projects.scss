@@ -5,13 +5,22 @@
   text-align: center;
   color: #fff;
   @include sectionBg;
+  @include mediaMax(1024px) {
+    padding-block: 40px;
+  }
   &__wrapper {
   }
   &__container {
     min-height: 910px;
+    @include mediaMax(1024px) {
+      min-height: 0;
+    }
   }
   &-header {
     padding-top: 110px;
+    @include mediaMax(1024px) {
+      padding-top: 0;
+    }
   }
 
   &__slider_area {
@@ -57,6 +66,12 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    @include mediaMax(1024px) {
+      max-width: 180px;
+      transform: none;
+      margin: 110px auto 0;
+      position: static;
+    }
   }
   &__navigator {
     transition: all 300ms linear;
@@ -79,6 +94,9 @@
     justify-content: center;
     max-width: 470px;
     margin: 150px auto 0;
+    @include mediaMax(1024px) {
+      margin-top: 40px;
+    }
   }
 
   &__btn {
@@ -105,6 +123,10 @@
     &::after {
       content: url(@images/projects/mobile-project-frame.png);
       top: 0;
+    }
+    @include mediaMax(1024px) {
+      bottom: 80px;
+      left: 220px;
     }
   }
   &--2 {

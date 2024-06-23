@@ -112,8 +112,7 @@
   flex-direction: column;
   gap: $gap;
   &__fieldset {
-    @include flexBetween;
-    gap: $gap;
+    @include flexBetween($gap);
   }
   &__label {
     display: block;

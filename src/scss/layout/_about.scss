@@ -8,6 +8,9 @@
   }
   &__container {
     padding-top: 8%;
+    @include mediaMax(1024px) {
+      padding-top: 40px;
+    }
   }
 }
 
@@ -20,11 +23,17 @@
 
   &__paragraph {
     margin-top: 51px;
+    @include mediaMax(1024px) {
+      margin-top: 40px;
+    }
   }
 
   &__title2 {
     margin-top: 99px;
     font-size: 3.5rem;
+    @include mediaMax(1024px) {
+      margin-top: 40px;
+    }
     &--accent-color {
     }
     &--sub-hdr {
@@ -41,7 +50,21 @@
   animation: marquee 50s linear infinite;
   width: 200%;
   @include flexBetween(0.4%);
+  @include mediaMax(1024px) {
+    width: 100%;
+    animation: none;
+    gap: 8px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 40px;
+  }
   &__item {
+  }
+  &__item.clone {
+    @include mediaMax(1024px) {
+      display: none;
+    }
   }
   &__figure {
     position: relative;
@@ -57,6 +80,9 @@
       opacity: 1;
       transform: translateY(0);
     }
+    @include mediaMax(1024px) {
+      display: none;
+    }
   }
   &__caption {
     position: absolute;
@@ -69,5 +95,12 @@
     transition: all 400ms linear;
     transform: translateY(50px);
     font-size: 1.5rem;
+    @include mediaMax(1024px) {
+      @include glass();
+      padding: 10px 42px;
+      transform: none;
+      opacity: 1;
+      position: static;
+    }
   }
 }
