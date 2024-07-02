@@ -1,7 +1,10 @@
 @use '../abstracts/abstractsIndex' as *;
 
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
   background-color: $priColor;
   padding-inline: 20px;
   &__wrapper {
@@ -12,10 +15,14 @@
     @include flexBetween;
     align-items: center;
     padding: 37px 0;
+    @include mediaMax(1024px) {
+      padding-right: 50px;
+    }
   }
 
   &__logo {
     width: 179px;
+    // opacity: 0;
   }
 
   &__logo-link {
@@ -28,16 +35,96 @@
 
   &__navigation {
     margin-inline: auto 11.3%;
+    transition: all 300ms linear;
+    @include mediaMax(1024px) {
+      order: 3;
+      margin: 0;
+      position: absolute;
+      right: 0;
+    }
   }
 
   &__resume-btn {
     @include btn(left);
+    // opacity: 0;
+    @include mediaMax(1024px) {
+      margin-left: auto;
+    }
+  }
+}
+
+.burger-btn {
+  display: none;
+  @include mediaMax(1024px) {
+    display: flex;
+  }
+  &__container {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    background: none;
+  }
+  &__lines {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 100vw;
+    cursor: pointer;
+    @include mediaMax(1024px) {
+      // display: none;
+    }
+    &::before,
+    &::after {
+      content: '';
+      width: 30px;
+      height: 4px;
+      border-radius: 10px;
+      background: inherit;
+      position: absolute;
+      left: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__close-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 5.9rem;
+    position: absolute;
+    top: 47px;
+    right: 20px;
+    z-index: 10;
+    background: none;
+    color: $secColor;
+    line-height: 0;
   }
 }
 
 .header-nav-list {
   @include flexBetween(55px);
   align-items: center;
+  @include mediaMax(1024px) {
+    display: none;
+    flex-direction: column;
+    padding: 120px 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    justify-content: flex-start;
+    z-index: 1;
+  }
+
   &__item {
   }
 
@@ -47,6 +134,9 @@
     transition: all 300ms linear;
     text-decoration-thickness: 0;
     text-underline-offset: 0;
+    @include mediaMax(1024px) {
+      color: $secColor;
+    }
   }
 
   &__item-link:hover,
@@ -54,5 +144,39 @@
     text-decoration-line: underline;
     text-decoration-thickness: 4px;
     text-underline-offset: 7px;
+  }
+}
+
+// Toggle Menu
+
+.header__navigation.menu-open {
+  @include mediaMax(1024px) {
+    max-width: 240px;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    animation: fadeInRight 300ms linear;
+  }
+}
+
+.header__navigation.menu-open .header-nav-list {
+  @include mediaMax(1024px) {
+    display: flex;
+  }
+}
+
+.header__navigation.menu-open .burger-btn__container {
+  @include mediaMax(1024px) {
+    display: none;
+  }
+}
+
+.header__navigation.menu-open .burger-btn__close-btn {
+  @include mediaMax(1024px) {
+    display: flex;
   }
 }

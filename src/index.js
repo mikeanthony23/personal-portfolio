@@ -214,9 +214,22 @@ document.querySelector('.form-area').addEventListener('submit', function (event)
   )
 })
 
+// Burger Menu
+
+const headerNavigation = document.querySelector('.header__navigation')
+const burgerMenuBtn = document.querySelector('.burger-btn__container')
+const burgerMenuClose = document.querySelector('.burger-btn__close-btn')
+
+const toggleMenu = () => {
+  headerNavigation.classList.toggle('menu-open')
+  headerNavigation.classList.add('menu-close')
+}
+
 // Event Listeners
 
 window.addEventListener('DOMContentLoaded', marquee)
 nameInput.addEventListener('input', nameValidation)
 emailInput.addEventListener('input', emailValidation)
 msgInput.addEventListener('input', msgValidation)
+burgerMenuBtn.addEventListener('click', toggleMenu)
+burgerMenuClose.addEventListener('click', toggleMenu)
