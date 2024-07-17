@@ -3,6 +3,10 @@
 .about {
   padding: 0 20px;
   color: #fff;
+  scroll-margin-top: 40px;
+  @include mediaMax(1024px) {
+    scroll-margin-top: 120px;
+  }
   &__wrapper {
     max-width: 1530px;
   }

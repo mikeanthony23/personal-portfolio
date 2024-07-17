@@ -3,12 +3,19 @@
 .footer {
   padding: 0 20px;
   @include sectionBg;
+  @include mediaMax(600px) {
+    padding-block: 40px;
+  }
   &__wrapper {
   }
   &__container {
     @include flexBetween;
     align-items: center;
     min-height: 150px;
+    @include mediaMax(600px) {
+      min-height: 0;
+      flex-direction: column;
+    }
   }
 
   .socials {

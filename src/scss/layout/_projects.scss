@@ -4,9 +4,11 @@
   padding: 0 20px;
   text-align: center;
   color: #fff;
+  scroll-margin-top: 40px;
   @include sectionBg;
   @include mediaMax(1024px) {
     padding-block: 40px;
+    scroll-margin-top: 120px;
   }
   &__wrapper {
   }
@@ -25,10 +27,18 @@
 
   &__slider_area {
     position: relative;
-    max-width: 1024px;
-    margin: auto;
+    width: 1024px;
+    margin-left: 50%;
+    transform: translateX(-50%);
     @include mediaMax(800px) {
-      transform: scale(0.7);
+      transform: scale(0.7) translateX(-50%);
+      transform-origin: 0 0;
+    }
+
+    @include mediaMax(600px) {
+      transform: scale(0.5) translateX(-50%);
+      height: 240px;
+      margin-top: 50px;
     }
   }
 }
@@ -116,10 +126,16 @@
     &--visit {
       @include btn(left);
       max-width: 210px;
+      @include mediaMax(600px) {
+        font-size: 1.6rem;
+      }
     }
     &--code {
       @include btn(right);
       max-width: 230px;
+      @include mediaMax(600px) {
+        font-size: 1.6rem;
+      }
     }
     &.hidden {
       display: none;
@@ -143,6 +159,13 @@
     }
     @include mediaMax(1024px) {
       left: 220px;
+    }
+    @include mediaMax(600px) {
+      bottom: -300px;
+    }
+  }
+  &--1 {
+    @include mediaMax(1024px) {
     }
   }
   &--2 {
