@@ -227,7 +227,7 @@ const toggleMenu = () => {
 
 // Event Listeners
 
-window.addEventListener('DOMContentLoaded', marquee)
+window.addEventListener('load', marquee)
 nameInput.addEventListener('input', nameValidation)
 emailInput.addEventListener('input', emailValidation)
 msgInput.addEventListener('input', msgValidation)
