@@ -233,3 +233,6 @@ emailInput.addEventListener('input', emailValidation)
 msgInput.addEventListener('input', msgValidation)
 burgerMenuBtn.addEventListener('click', toggleMenu)
 burgerMenuClose.addEventListener('click', toggleMenu)
+window.addEventListener('load', () => {
+  document.querySelector('.loader-container').remove()
+})
