@@ -21,8 +21,7 @@
   }
 
   &__logo {
-    width: 179px;
-    // opacity: 0;
+    width: 250px;
   }
 
   &__logo-link {
@@ -46,7 +45,6 @@
 
   &__resume-btn {
     @include btn(left);
-    // opacity: 0;
     @include mediaMax(1024px) {
       margin-left: auto;
     }
