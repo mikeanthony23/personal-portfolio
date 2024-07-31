@@ -233,5 +233,11 @@ msgInput.addEventListener('input', msgValidation)
 burgerMenuBtn.addEventListener('click', toggleMenu)
 burgerMenuClose.addEventListener('click', toggleMenu)
 window.addEventListener('load', () => {
-  document.querySelector('.loader-container').remove()
+  const loaderContainer = document.querySelector('.loader-container')
+  setTimeout(() => {
+    loaderContainer.classList.add('fade')
+    setTimeout(() => {
+      loaderContainer.remove()
+    }, 1500)
+  }, 1000)
 })

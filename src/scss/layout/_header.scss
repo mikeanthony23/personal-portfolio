@@ -70,7 +70,6 @@
     border-radius: 100vw;
     cursor: pointer;
     @include mediaMax(1024px) {
-      // display: none;
     }
     &::before,
     &::after {
@@ -177,4 +176,12 @@
   @include mediaMax(1024px) {
     display: flex;
   }
+}
+
+.loader-container {
+  transition: opacity 1500ms linear;
+}
+
+.fade {
+  opacity: 0;
 }
