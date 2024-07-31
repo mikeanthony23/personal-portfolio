@@ -4,7 +4,9 @@
   padding: 0 20px;
   color: #fff;
   text-align: center;
-
+  @include mediaMax(1024px) {
+    padding-block: 60px;
+  }
   &__loader-container {
     position: fixed;
     background: #000000ad;
@@ -93,6 +95,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @include mediaMax(1024px) {
+      min-height: 0;
+    }
   }
 }
 
