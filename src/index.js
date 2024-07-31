@@ -162,29 +162,28 @@ document.querySelector('.form-area').addEventListener('submit', function (event)
   contactFormSection.insertAdjacentHTML(
     'afterbegin',
     `<div class="contact__loader-container">
-  <div class="contact__loader contact__alert-msg">
-    <span>S</span>
-    <span>E</span>
-    <span>N</span>
-    <span>D</span>
-    <span>I</span>
-    <span>N</span>
-    <span>G</span>
-  </div>
-</div>`,
+      <div class="contact__loader contact__alert-msg">
+        <span>S</span>
+        <span>E</span>
+        <span>N</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+      </div>
+    </div>`,
   )
 
-  // these IDs from the previous steps
   emailjs.send('service_73vcqr1', 'template_u2gcl6m', emailContent).then(
     () => {
       document.querySelector('.contact__loader-container').remove()
       contactFormSection.insertAdjacentHTML(
         'afterbegin',
         `<div class="contact__loader-container">
-        <div class="contact__alert-msg">
-        <span>Email Sent</span>
-      </div>
-    </div>`,
+            <div class="contact__alert-msg">
+              <span>Email Sent</span>
+            </div>
+         </div>`,
       )
       setTimeout(() => {
         document.querySelector('.contact__alert-msg').classList.add('contact__alert-msg--sent')
